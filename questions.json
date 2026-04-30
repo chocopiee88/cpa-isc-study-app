@@ -1,0 +1,32 @@
+[
+    {
+        "question": "Which of the following best describes 'SOC 2 Type II' reporting?",
+        "options": [
+            "A report on management's description of a system at a specific point in time.",
+            "A report on the suitability of the design and operating effectiveness of controls over a period of time.",
+            "A public-facing summary of financial statement audits.",
+            "A technical vulnerability scan of a cloud network."
+        ],
+        "answer": 1
+    },
+    {
+        "question": "In the context of IT governance, what is the primary purpose of a Business Continuity Plan (BCP)?",
+        "options": [
+            "To prevent all cyber attacks from occurring.",
+            "To document the software code used in financial reporting.",
+            "To ensure the organization can continue operations during and after a significant disruption.",
+            "To track the physical location of all company laptops."
+        ],
+        "answer": 2
+    },
+    {
+        "question": "Which control is most effective at preventing 'SQL Injection' attacks on a web application?",
+        "options": [
+            "Using strong passwords.",
+            "Implementing input validation and parameterized queries.",
+            "Installing a hardware firewall.",
+            "Encrying data at rest."
+        ],
+        "answer": 1
+    }
+]
