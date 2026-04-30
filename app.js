@@ -2,9 +2,14 @@ let currentQuestions = [];
 let currentIndex = 0;
 
 async function loadQuiz() {
-    const response = await fetch('questions.json');
-    currentQuestions = await response.json();
-    showQuestion();
+    try {
+        const response = await fetch('questions.json');
+        currentQuestions = await response.json();
+        showQuestion();
+    } catch (error) {
+        console.error("Error loading questions:", error);
+        document.getElementById('question').innerText = "Failed to load quiz questions.";
+    }
 }
 
 function showQuestion() {
@@ -29,16 +34,28 @@ function checkAnswer(selected, correct) {
         if(i === correct) btn.classList.add('correct');
         else if(i === selected) btn.classList.add('wrong');
     });
+    
+    // Only show the Next button if there are more questions left
     document.getElementById('next-btn').classList.remove('hidden');
 }
 
 document.getElementById('next-btn').onclick = () => {
     currentIndex++;
+    
     if(currentIndex < currentQuestions.length) {
+        // Move to the next question and hide the button again
         showQuestion();
         document.getElementById('next-btn').classList.add('hidden');
     } else {
-        document.getElementById('quiz').innerHTML = "<h2>Quiz Complete!</h2>";
+        // End of quiz: Show final message and HIDE the button permanently
+        document.getElementById('quiz').innerHTML = `
+            <div style="text-align: center; padding: 20px;">
+                <h2>Quiz Complete!</h2>
+                <p>Great job reviewing the ISC concepts.</p>
+                <button onclick="location.reload()" class="option-btn" style="text-align: center; margin-top: 20px;">Restart Quiz</button>
+            </div>
+        `;
+        document.getElementById('next-btn').classList.add('hidden');
     }
 };
 
