@@ -7,8 +7,7 @@ async function loadQuiz() {
         currentQuestions = await response.json();
         showQuestion();
     } catch (error) {
-        console.error("Error loading questions:", error);
-        document.getElementById('question').innerText = "Failed to load quiz questions.";
+        document.getElementById('question').innerText = "Error loading quiz data.";
     }
 }
 
@@ -35,27 +34,31 @@ function checkAnswer(selected, correct) {
         else if(i === selected) btn.classList.add('wrong');
     });
     
-    // Only show the Next button if there are more questions left
-    document.getElementById('next-btn').classList.remove('hidden');
+    const nextBtn = document.getElementById('next-btn');
+    if (currentIndex < currentQuestions.length - 1) {
+        nextBtn.innerText = "Next Question";
+    } else {
+        nextBtn.innerText = "Finish Quiz";
+    }
+    nextBtn.classList.remove('hidden');
 }
 
 document.getElementById('next-btn').onclick = () => {
     currentIndex++;
-    
     if(currentIndex < currentQuestions.length) {
-        // Move to the next question and hide the button again
         showQuestion();
         document.getElementById('next-btn').classList.add('hidden');
     } else {
-        // End of quiz: Show final message and HIDE the button permanently
         document.getElementById('quiz').innerHTML = `
             <div style="text-align: center; padding: 20px;">
                 <h2>Quiz Complete!</h2>
-                <p>Great job reviewing the ISC concepts.</p>
-                <button onclick="location.reload()" class="option-btn" style="text-align: center; margin-top: 20px;">Restart Quiz</button>
+                <p>Great job on the ISC review.</p>
+                <button onclick="location.reload()" class="option-btn" style="margin: 20px auto; background: #38bdf8; color: #0f172a; font-weight: bold; border: none;">
+                    Try Again
+                </button>
             </div>
         `;
-        document.getElementById('next-btn').classList.add('hidden');
+        document.getElementById('next-btn').style.display = 'none';
     }
 };
 
