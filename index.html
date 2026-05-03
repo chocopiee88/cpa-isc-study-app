@@ -3,18 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CPA ISC Study Tool</title>
+    <title>CPA Exam Prep: ISC</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="quiz-container">
-        <h1>CPA Exam Prep: ISC</h1>
-        <div id="quiz">
-            <div id="question">Loading question...</div>
-            <div id="options"></div>
-        </div>
-        <div id="result" class="hidden"></div>
-        <button id="next-btn" class="hidden">Next Question</button>
+    <div class="container">
+        <header>
+            <h1>CPA Exam Prep: ISC</h1>
+        </header>
+        <main id="quiz">
+            <div id="question-container">
+                <p id="question">Loading questions...</p>
+                <div id="options" class="options-grid"></div>
+            </div>
+            <button id="next-btn" class="hidden">Next Question</button>
+        </main>
     </div>
     <script src="app.js"></script>
 </body>
