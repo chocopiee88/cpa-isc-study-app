@@ -1,32 +1,27 @@
 [
-    {
-        "question": "Which of the following best describes 'SOC 2 Type II' reporting?",
-        "options": [
-            "A report on management's description of a system at a specific point in time.",
-            "A report on the suitability of the design and operating effectiveness of controls over a period of time.",
-            "A public-facing summary of financial statement audits.",
-            "A technical vulnerability scan of a cloud network."
-        ],
-        "answer": 1
-    },
-    {
-        "question": "In the context of IT governance, what is the primary purpose of a Business Continuity Plan (BCP)?",
-        "options": [
-            "To prevent all cyber attacks from occurring.",
-            "To document the software code used in financial reporting.",
-            "To ensure the organization can continue operations during and after a significant disruption.",
-            "To track the physical location of all company laptops."
-        ],
-        "answer": 2
-    },
-    {
-        "question": "Which control is most effective at preventing 'SQL Injection' attacks on a web application?",
-        "options": [
-            "Using strong passwords.",
-            "Implementing input validation and parameterized queries.",
-            "Installing a hardware firewall.",
-            "Encrying data at rest."
-        ],
-        "answer": 1
-    }
+  {
+    "question": "Which of the following is a primary objective of Information Systems and Controls (ISC)?",
+    "options": ["Ensuring data integrity and availability", "Increasing manual data entry", "Eliminating all network hardware"],
+    "answer": 0
+  },
+  {
+    "question": "In the COSO framework, which component addresses the 'tone at the top'?",
+    "options": ["Risk Assessment", "Control Environment", "Information and Communication"],
+    "answer": 1
+  },
+  {
+    "question": "Which type of control is designed to stop an error or fraud before it occurs?",
+    "options": ["Detective Control", "Corrective Control", "Preventive Control"],
+    "answer": 2
+  },
+  {
+    "question": "What is the primary purpose of a disaster recovery plan (DRP)?",
+    "options": ["To prevent all cyber attacks", "To restore IT operations after an outage", "To decrease employee salaries"],
+    "answer": 1
+  },
+  {
+    "question": "Which of the following is an example of a 'Biometric' authentication factor?",
+    "options": ["A password", "A physical key card", "A fingerprint scan"],
+    "answer": 2
+  }
 ]
